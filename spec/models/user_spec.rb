@@ -127,8 +127,10 @@ RSpec.describe User, type: :model do
       end
     end
 
-    it '全ての項目が存在すれば登録できる' do
-      expect(@user).to be_valid
+    context "ユーザーが登録できるとき" do
+      it '全ての項目が存在すれば登録できる' do
+        expect(@user).to be_valid
+      end
     end
   end
 end
