@@ -6,6 +6,6 @@ class ShippingCharges < ActiveHash::Base
   ]
 
   include ActiveHash::Associations
-  has_many :products
+  has_many :items
 
 end
