@@ -10,8 +10,7 @@ class PurchaseRecordAddress
     validates :phone_number, format: {with: /\d{10,11}/}, length: {maximum: 11}
     validates :user_id
     validates :item_id
-    # validates :token
-    # pay.jp実装後にvalidatesの#を外す
+    validates :token
   end
 
   validate :building_name
