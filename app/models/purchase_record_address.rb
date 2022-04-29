@@ -7,13 +7,11 @@ class PurchaseRecordAddress
     validates :prefecture_id, numericality: {other_than: 0, message: "can't be blank"}
     validates :city
     validates :house_number
-    validates :phone_number, format: {with: /\d{10,11}/}, length: {maximum: 11}
+    validates :phone_number, format: {with: /\A\d{10,11}\z/}, length: {maximum: 11}
     validates :user_id
     validates :item_id
     validates :token
   end
-
-  validate :building_name
 
   def save
     purchase_record = PurchaseRecord.create(user_id: user_id, item_id: item_id)
