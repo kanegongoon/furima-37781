@@ -63,7 +63,7 @@ RSpec.describe PurchaseRecordAddress, type: :model do
         expect(@purchase_record_address.errors.full_messages).to include "Phone number can't be blank"
       end
 
-      it "電話番号:10~11桁の半角数字" do
+      it "電話番号:12桁以上" do
         @purchase_record_address.phone_number = '123456789101'
         @purchase_record_address.valid?
         expect(@purchase_record_address.errors.full_messages).to include "Phone number is too long (maximum is 11 characters)"
